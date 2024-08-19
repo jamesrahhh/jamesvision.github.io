@@ -1,1 +1,1 @@
-![TRA](https://cdn.discordapp.com/attachments/1100530223231021066/1174095616465453136/image.png?ex=66c45f00&is=66c30d80&hm=8d3c1bdf367b7c6b09102263a3194ec2167117276db8f3b28804e9a5d2aa4b55&)
+# jamesrahhh.github.io
