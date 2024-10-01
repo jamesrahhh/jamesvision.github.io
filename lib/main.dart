@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 void main() {
   runApp(const Jamesrahhh());
@@ -22,10 +24,10 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: <Text>[
-          Text('@jamesrahhh',
+        children: <Widget>[
+          const Text('@jamesrahhh',
               overflow: TextOverflow.ellipsis,
               style: TextStyle(
                   fontSize: 15,
@@ -33,7 +35,7 @@ class Home extends StatelessWidget {
                   color: Colors.black,
                   fontFamily: 'Montserrat',
                   fontVariations: <FontVariation>[FontVariation('wght', 700)])),
-          Text(
+          const Text(
             'coming soon.',
             overflow: TextOverflow.ellipsis,
             style: TextStyle(
@@ -43,6 +45,28 @@ class Home extends StatelessWidget {
                 fontFamily: 'Montserrat',
                 fontVariations: <FontVariation>[FontVariation('wght', 700)]),
           ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <GestureDetector>[
+              GestureDetector(
+                  onTap: () => launchUrl(Uri.https('github.com', 'jamesrahhh')),
+                  child: const Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Icon(
+                        FontAwesomeIcons.github,
+                        size: 25,
+                      ))),
+              GestureDetector(
+                  onTap: () =>
+                      launchUrl(Uri.https('instagram.com', 'jamesrahhh')),
+                  child: const Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Icon(
+                        FontAwesomeIcons.instagram,
+                        size: 25,
+                      )))
+            ],
+          )
         ]);
   }
 }
