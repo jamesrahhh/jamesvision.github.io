@@ -13,7 +13,8 @@ class Jamesrahhh extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'jamesrahhh.dev',
-      theme: ThemeData(useMaterial3: true),
+      theme: ThemeData(
+          textTheme: Typography.blackMountainView, useMaterial3: true),
       home: const Home(),
     );
   }
@@ -24,18 +25,19 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          const Text('@jamesrahhh',
-              overflow: TextOverflow.ellipsis,
-              style: TextStyle(
-                  fontSize: 15,
-                  decoration: TextDecoration.none,
-                  color: Colors.black,
-                  fontFamily: 'Montserrat',
-                  fontVariations: <FontVariation>[FontVariation('wght', 700)])),
-          const Text(
+    return Stack(children: <Widget>[
+      Column(mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[
+        const Text('@jamesrahhh',
+            overflow: TextOverflow.ellipsis,
+            style: TextStyle(
+                fontSize: 15,
+                decoration: TextDecoration.none,
+                color: Colors.black,
+                fontFamily: 'Montserrat',
+                fontVariations: <FontVariation>[FontVariation('wght', 700)])),
+        const FittedBox(
+          fit: BoxFit.fitWidth,
+          child: Text(
             'coming soon.',
             overflow: TextOverflow.ellipsis,
             style: TextStyle(
@@ -45,28 +47,41 @@ class Home extends StatelessWidget {
                 fontFamily: 'Montserrat',
                 fontVariations: <FontVariation>[FontVariation('wght', 700)]),
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <GestureDetector>[
-              GestureDetector(
-                  onTap: () => launchUrl(Uri.https('github.com', 'jamesrahhh')),
-                  child: const Padding(
-                      padding: EdgeInsets.all(8.0),
-                      child: Icon(
-                        FontAwesomeIcons.github,
-                        size: 25,
-                      ))),
-              GestureDetector(
-                  onTap: () =>
-                      launchUrl(Uri.https('instagram.com', 'jamesrahhh')),
-                  child: const Padding(
-                      padding: EdgeInsets.all(8.0),
-                      child: Icon(
-                        FontAwesomeIcons.instagram,
-                        size: 25,
-                      )))
-            ],
-          )
-        ]);
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <GestureDetector>[
+            GestureDetector(
+                onTap: () => launchUrl(Uri.https('github.com', 'jamesrahhh')),
+                child: const Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Icon(
+                      FontAwesomeIcons.github,
+                      color: Colors.black,
+                      size: 25,
+                    ))),
+            GestureDetector(
+                onTap: () =>
+                    launchUrl(Uri.https('instagram.com', 'jamesrahhh')),
+                child: const Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Icon(
+                      FontAwesomeIcons.instagram,
+                      color: Colors.black,
+                      size: 25,
+                    )))
+          ],
+        )
+      ]),
+      Align(
+          alignment: Alignment.bottomRight,
+          child: GestureDetector(
+            onTap: () => showLicensePage(context: context),
+            child: const Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Icon(Icons.info_outline, color: Colors.black),
+            ),
+          ))
+    ]);
   }
 }
