@@ -12,6 +12,7 @@ dependencies:
   flutter_launcher_icons: ^0.14.1
   font_awesome_flutter: ^10.7.0
   url_launcher: ^6.3.0
+  flex_color_scheme: ^7.3.1
 
 dev_dependencies:
   flutter_test:
