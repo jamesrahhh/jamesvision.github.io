@@ -87,21 +87,21 @@ class Home extends StatelessWidget {
             children: <GestureDetector>[
               GestureDetector(
                   onTap: () => launchUrl(Uri.https('github.com', 'jamesrahhh')),
-                  child: const Padding(
-                      padding: EdgeInsets.all(8.0),
+                  child: Padding(
+                      padding: const EdgeInsets.all(8.0),
                       child: Icon(
                         FontAwesomeIcons.github,
-                        color: Colors.black,
+                        color: Theme.of(context).colorScheme.primary,
                         size: 25,
                       ))),
               GestureDetector(
                   onTap: () =>
                       launchUrl(Uri.https('instagram.com', 'jamesrahhh')),
-                  child: const Padding(
-                      padding: EdgeInsets.all(8.0),
+                  child: Padding(
+                      padding: const EdgeInsets.all(8.0),
                       child: Icon(
                         FontAwesomeIcons.instagram,
-                        color: Colors.black,
+                        color: Theme.of(context).colorScheme.primary,
                         size: 25,
                       )))
             ],
@@ -111,9 +111,10 @@ class Home extends StatelessWidget {
             alignment: Alignment.bottomRight,
             child: GestureDetector(
               onTap: () => showLicensePage(context: context),
-              child: const Padding(
-                padding: EdgeInsets.all(8.0),
-                child: Icon(Icons.info_outline, color: Colors.black),
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Icon(Icons.info_outline,
+                    color: Theme.of(context).colorScheme.primary),
               ),
             ))
       ]),
