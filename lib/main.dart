@@ -1,5 +1,6 @@
 import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -63,8 +64,35 @@ class Jamesrahhh extends StatelessWidget {
   }
 }
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
   const Home({super.key});
+
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  @override
+  void initState() {
+    super.initState();
+    HardwareKeyboard.instance.addHandler(_handleKeys);
+  }
+
+  @override
+  void dispose() {
+    HardwareKeyboard.instance.removeHandler(_handleKeys);
+    super.dispose();
+  }
+
+  bool _handleKeys(KeyEvent event) {
+    if (event.logicalKey == LogicalKeyboardKey.escape &&
+        Navigator.canPop(context)) {
+      Navigator.pop(context);
+      return true;
+    }
+
+    return false;
+  }
 
   @override
   Widget build(BuildContext context) {
