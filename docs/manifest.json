@@ -1,11 +1,11 @@
 {
-    "name": "jamesrahhh",
-    "short_name": "jamesrahhh",
+    "name": "james_vision",
+    "short_name": "james_vision",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "jamesrahhh",
+    "description": "A new Flutter project.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

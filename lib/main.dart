@@ -1,60 +1,76 @@
-import 'package:flex_color_scheme/flex_color_scheme.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 void main() {
-  runApp(const Jamesrahhh());
+  LicenseRegistry.addLicense(() async* {
+    final String license = await rootBundle.loadString(
+      'fonts/OFL_Montserrat.txt',
+    );
+    yield LicenseEntryWithLineBreaks(<String>['montserrat'], license);
+  });
+
+  runApp(const Vision());
 }
 
-class Jamesrahhh extends StatelessWidget {
-  const Jamesrahhh({super.key});
+class Vision extends StatelessWidget {
+  const Vision({super.key});
 
   @override
   Widget build(BuildContext context) => MaterialApp(
-        title: 'jamesrahhh.dev',
-        theme: FlexThemeData.light(
+        title: 'VISION',
+        theme: ThemeData(
           textTheme: const TextTheme(
             displaySmall: TextStyle(
-                fontSize: 15,
-                fontVariations: <FontVariation>[FontVariation('wght', 800)]),
+              fontSize: 15,
+              fontVariations: <FontVariation>[FontVariation('wght', 800)],
+            ),
             displayMedium: TextStyle(
-                fontVariations: <FontVariation>[FontVariation('wght', 800)]),
+              fontVariations: <FontVariation>[FontVariation('wght', 800)],
+            ),
             displayLarge: TextStyle(
-                fontSize: 100,
-                fontVariations: <FontVariation>[FontVariation('wght', 800)]),
+              fontSize: 100,
+              fontVariations: <FontVariation>[FontVariation('wght', 800)],
+            ),
             headlineSmall: TextStyle(
-                fontVariations: <FontVariation>[FontVariation('wght', 700)]),
+              fontVariations: <FontVariation>[FontVariation('wght', 700)],
+            ),
             headlineMedium: TextStyle(
-                fontVariations: <FontVariation>[FontVariation('wght', 700)]),
+              fontVariations: <FontVariation>[FontVariation('wght', 700)],
+            ),
             headlineLarge: TextStyle(
-                fontVariations: <FontVariation>[FontVariation('wght', 700)]),
+              fontVariations: <FontVariation>[FontVariation('wght', 700)],
+            ),
             titleSmall: TextStyle(
-                fontVariations: <FontVariation>[FontVariation('wght', 600)]),
+              fontVariations: <FontVariation>[FontVariation('wght', 600)],
+            ),
             titleMedium: TextStyle(
-                fontVariations: <FontVariation>[FontVariation('wght', 600)]),
+              fontVariations: <FontVariation>[FontVariation('wght', 600)],
+            ),
             titleLarge: TextStyle(
-                fontVariations: <FontVariation>[FontVariation('wght', 600)]),
+              fontVariations: <FontVariation>[FontVariation('wght', 600)],
+            ),
             bodySmall: TextStyle(
-                fontVariations: <FontVariation>[FontVariation('wght', 400)]),
+              fontSize: 13,
+              fontVariations: <FontVariation>[FontVariation('wght', 300)],
+            ),
             bodyMedium: TextStyle(
-                fontVariations: <FontVariation>[FontVariation('wght', 400)]),
+              fontVariations: <FontVariation>[FontVariation('wght', 400)],
+            ),
             bodyLarge: TextStyle(
-                fontVariations: <FontVariation>[FontVariation('wght', 400)]),
-          ).apply(
-            bodyColor: Colors.black,
-            displayColor: Colors.black,
-          ),
-          colors: const FlexSchemeColor(
+              fontVariations: <FontVariation>[FontVariation('wght', 400)],
+            ),
+          ).apply(bodyColor: Colors.black, displayColor: Colors.black),
+          colorScheme: const ColorScheme(
             primary: Colors.black,
-            primaryContainer: Colors.black,
             secondary: Colors.black,
-            secondaryContainer: Colors.black,
-            tertiary: Colors.black,
-            tertiaryContainer: Colors.white,
             error: Colors.red,
-            errorContainer: Colors.white,
+            onSurface: Colors.black,
+            surface: Colors.white,
+            onError: Colors.black,
+            onSecondary: Colors.black,
+            onPrimary: Colors.black,
+            brightness: Brightness.light,
           ),
           fontFamily: 'Montserrat',
         ),
@@ -94,57 +110,48 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-        body: Stack(children: <Widget>[
-          Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Text('@jamesrahhh',
-                    overflow: TextOverflow.ellipsis,
-                    style: Theme.of(context).textTheme.displaySmall),
-                FittedBox(
-                  fit: BoxFit.fitWidth,
-                  child: Text(
-                    'coming soon.',
-                    overflow: TextOverflow.ellipsis,
-                    style: Theme.of(context).textTheme.displayLarge,
+        body: Stack(
+          children: <Widget>[
+            Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                spacing: 2.0,
+                children: <Widget>[
+                  Image.asset(
+                    'assets/tile.jpg',
+                    width: 350,
+                    height: 350,
+                    fit: BoxFit.contain,
                   ),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <GestureDetector>[
-                    GestureDetector(
-                        onTap: () =>
-                            launchUrl(Uri.https('github.com', 'jamesrahhh')),
-                        child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Icon(
-                              FontAwesomeIcons.github,
-                              color: Theme.of(context).colorScheme.primary,
-                              size: 25,
-                            ))),
-                    GestureDetector(
-                        onTap: () =>
-                            launchUrl(Uri.https('instagram.com', 'jamesrahhh')),
-                        child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Icon(
-                              FontAwesomeIcons.instagram,
-                              color: Theme.of(context).colorScheme.primary,
-                              size: 25,
-                            )))
-                  ],
-                )
-              ]),
-          Align(
+                  SizedBox(
+                    width: 350,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Text>[
+                        Text('© VISION by James Otto',
+                            style: Theme.of(context).textTheme.bodySmall),
+                        Text('coming soon',
+                            style: Theme.of(context).textTheme.bodySmall),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Align(
               alignment: Alignment.bottomRight,
               child: GestureDetector(
                 onTap: () => showLicensePage(context: context),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Icon(Icons.info_outline,
-                      color: Theme.of(context).colorScheme.primary),
+                child: const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Icon(
+                    Icons.info_outline,
+                    size: 16,
+                  ),
                 ),
-              ))
-        ]),
+              ),
+            ),
+          ],
+        ),
       );
 }

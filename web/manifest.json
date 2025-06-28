@@ -1,11 +1,11 @@
 {
-    "name": "jamesrahhh",
-    "short_name": "jamesrahhh",
+    "name": "vision",
+    "short_name": "vision",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "jamesrahhh",
+    "description": "VISION by james otto",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
