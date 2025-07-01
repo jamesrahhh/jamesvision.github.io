@@ -1,11 +1,11 @@
 {
-    "name": "james_vision",
-    "short_name": "james_vision",
+    "name": "vision",
+    "short_name": "vision",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "VISION by James Otto",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

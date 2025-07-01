@@ -118,7 +118,7 @@ class _HomeState extends State<Home> {
                 spacing: 2.0,
                 children: <Widget>[
                   Image.asset(
-                    'assets/tile.jpg',
+                    'assets/tile.png',
                     width: 350,
                     height: 350,
                     fit: BoxFit.contain,
@@ -147,6 +147,7 @@ class _HomeState extends State<Home> {
                   child: Icon(
                     Icons.info_outline,
                     size: 16,
+                    color: Color(0xFF767676),
                   ),
                 ),
               ),
