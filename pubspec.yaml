@@ -11,7 +11,7 @@ dependencies:
     sdk: flutter
   flutter_launcher_icons: ^0.14.1
   font_awesome_flutter: ^10.7.0
-  url_launcher: ^6.3.0
+  url_launcher: ^6.3.2
 
 dev_dependencies:
   flutter_lints: ^6.0.0
