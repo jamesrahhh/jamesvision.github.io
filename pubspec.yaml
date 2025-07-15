@@ -6,17 +6,17 @@ environment:
   sdk: ^3.5.3
 
 dependencies:
+  cupertino_icons: ^1.0.8
   flutter:
     sdk: flutter
-  cupertino_icons: ^1.0.8
   flutter_launcher_icons: ^0.14.1
   font_awesome_flutter: ^10.7.0
   url_launcher: ^6.3.0
 
 dev_dependencies:
+  flutter_lints: ^6.0.0
   flutter_test:
     sdk: flutter
-  flutter_lints: ^6.0.0
 
 flutter_launcher_icons:
   web:

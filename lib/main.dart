@@ -99,8 +99,7 @@ class _HomeState extends State<Home> {
   }
 
   bool _handleKeys(KeyEvent event) {
-    if (event.logicalKey == LogicalKeyboardKey.escape &&
-        Navigator.canPop(context)) {
+    if (event.logicalKey == LogicalKeyboardKey.escape && Navigator.canPop(context)) {
       Navigator.pop(context);
       return true;
     }
@@ -115,7 +114,7 @@ class _HomeState extends State<Home> {
             Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                spacing: 2.0,
+                spacing: 2,
                 children: <Widget>[
                   Image.asset(
                     'assets/tile.png',
@@ -128,10 +127,14 @@ class _HomeState extends State<Home> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Text>[
-                        Text('© VISION by James Otto',
-                            style: Theme.of(context).textTheme.bodySmall),
-                        Text('coming soon',
-                            style: Theme.of(context).textTheme.bodySmall),
+                        Text(
+                          '© VISION by James Otto',
+                          style: Theme.of(context).textTheme.bodySmall,
+                        ),
+                        Text(
+                          'coming soon',
+                          style: Theme.of(context).textTheme.bodySmall,
+                        ),
                       ],
                     ),
                   ),
@@ -143,7 +146,7 @@ class _HomeState extends State<Home> {
               child: GestureDetector(
                 onTap: () => showLicensePage(context: context),
                 child: const Padding(
-                  padding: EdgeInsets.all(8.0),
+                  padding: EdgeInsets.all(8),
                   child: Icon(
                     Icons.info_outline,
                     size: 16,
