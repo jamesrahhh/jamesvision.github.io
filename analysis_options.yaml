@@ -5,9 +5,11 @@ analyzer:
     strict-casts: true
     strict-inference: true
     strict-raw-types: true
+  plugins:
+    - custom-lint
 
 formatter:
-  page_width: 160
+  page_width: 100
 
 linter:
   rules:
@@ -15,8 +17,10 @@ linter:
     - always_put_control_body_on_new_line
     - always_put_required_named_parameters_first
     - always_specify_types
+    # - always_use_package_imports # conflicts with prefer_relative_imports
     - annotate_overrides
     - annotate_redeclares
+    # - avoid_annotating_with_dynamic # conflicts with always_specify_types
     - avoid_bool_literals_in_conditional_expressions
     - avoid_catches_without_on_clauses
     - avoid_catching_errors
@@ -50,6 +54,7 @@ linter:
     - avoid_slow_async_io
     - avoid_type_to_string
     - avoid_types_as_parameter_names
+    # - avoid_types_on_closure_parameters # conflicts with always_specify_types
     - avoid_unnecessary_containers
     - avoid_unused_constructor_parameters
     - avoid_void_async
@@ -72,8 +77,9 @@ linter:
     - depend_on_referenced_packages
     - deprecated_consistency
     - deprecated_member_use_from_same_package
+    - diagnostic_describe_all_properties
     - directives_ordering
-    - discarded_futures
+    # - discarded_futures # too many false positives
     - do_not_use_environment
     - document_ignores
     - empty_catches
@@ -95,6 +101,7 @@ linter:
     - library_names
     - library_prefixes
     - library_private_types_in_public_api
+    # - lines_longer_than_80_chars # not required by flutter style
     - literal_only_boolean_expressions
     - matching_super_parameters
     - missing_code_block_language_in_doc_comment
@@ -113,6 +120,9 @@ linter:
     - noop_primitive_operations
     - null_check_on_nullable_type_parameter
     - null_closures
+    # - omit_local_variable_types # conflicts with always_specify_types
+    # - omit_obvious_local_variable_types # conflicts with always_specify_types
+    # - omit_obvious_property_types # conflicts with always_specify_types
     - one_member_abstracts
     - only_throw_errors
     - overridden_fields
@@ -130,10 +140,12 @@ linter:
     - prefer_const_literals_to_create_immutables
     - prefer_constructors_over_static_methods
     - prefer_contains
+    # - prefer_double_quotes # conflicts with prefer_single_quotes
     - prefer_expression_function_bodies
     - prefer_final_fields
     - prefer_final_in_for_each
     - prefer_final_locals
+    # - prefer_final_parameters # adds too much verbosity
     - prefer_for_elements_to_map_fromIterable
     - prefer_foreach
     - prefer_function_declarations_over_variables
@@ -157,6 +169,7 @@ linter:
     - prefer_typing_uninitialized_variables
     - prefer_void_to_null
     - provide_deprecation_message
+    # - public_member_api_docs # disabled for now
     - recursive_getters
     - require_trailing_commas
     - secure_pubspec_urls
@@ -184,6 +197,7 @@ linter:
     - unnecessary_breaks
     - unnecessary_const
     - unnecessary_constructor_name
+    # - unnecessary_final # conflicts with prefer_final_locals
     - unnecessary_getters_setters
     - unnecessary_ignore
     - unnecessary_lambdas
@@ -231,3 +245,6 @@ linter:
     - use_truncating_division
     - valid_regexps
     - void_checks
+
+custom_lint:
+  rules:
