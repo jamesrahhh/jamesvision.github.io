@@ -34,7 +34,7 @@ jobs:
           dart pub global activate jaspr_cli
           jaspr build --verbose
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: 'build/jaspr'
       - name: Deploy to GitHub Pages
