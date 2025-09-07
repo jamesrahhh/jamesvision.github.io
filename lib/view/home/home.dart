@@ -6,7 +6,7 @@ class Home extends StatelessComponent {
   @override
   Iterable<Component> build(BuildContext context) sync* {
     yield div(classes: 'seized', <Component>[
-      h1(<Component>[text('sashenka says hi')]),
+      h1(<Component>[text('max says hi')]),
     ]);
   }
 
@@ -31,7 +31,7 @@ class Home extends StatelessComponent {
           css('h1').styles(
             color: Colors.transparent,
             textAlign: TextAlign.center,
-            fontSize: const Unit.vw(3),
+            fontSize: const Unit.vw(1),
             margin: const Spacing.only(bottom: Unit.percent(30)),
           ),
         ]),
